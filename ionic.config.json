@@ -1,0 +1,7 @@
+{
+  "name": "ionic-eporner",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
