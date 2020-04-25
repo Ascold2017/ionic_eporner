@@ -1,0 +1,21 @@
+
+<ion-grid>
+  <ion-row>
+    <ion-input placeholder="Search..." [value]="pornsService.searchString" (input)="pornsService.setSearch($event.target.value)"></ion-input>
+    <ion-button fill="outline" (click)="pornsService.getVideos()">
+      <ion-icon name="search" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-select [value]="pornsService.sorting" (ionChange)="pornsService.setSorting($event.target.value)" interface="action-sheet">
+        <ion-select-option *ngFor="let item of sortingItems"  [value]="item.value">{{ item.text }}</ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col>
+      <ion-select [value]="pornsService.gayFilter" (ionChange)="pornsService.setGayFilter($event.target.value)" interface="action-sheet">
+        <ion-select-option *ngFor="let item of gayFilterItems"  [value]="item.value">{{ item.text }}</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+</ion-grid>

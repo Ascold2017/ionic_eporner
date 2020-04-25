@@ -1,0 +1,10 @@
+
+
+<ion-grid style="height: 100%;" color="danger" class="ion-no-padding">
+  <ion-row class="ion-align-items-center ion-justify-content-center" style="height: 100%; flex-direction: column" *ngIf="pornsService.isLoading">
+    <ion-spinner color="primary" style="width: 40px; height: 40px;"></ion-spinner>
+  </ion-row>
+  <ion-list *ngIf="!pornsService.isLoading" style="background-color: var(--ion-color-danger);">
+    <app-porns-list-item *ngFor="let pornItem of pornsService.porns" [pornItem]="pornItem"></app-porns-list-item>
+  </ion-list>
+</ion-grid>
